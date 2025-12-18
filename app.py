@@ -51,7 +51,7 @@ scheduler.start()
 def keep_alive():
     while True:
         try:
-            requests.get("https://teamdev.sbs/ping")
+            requests.get("https://hostaitelegrambot.onrender/ping")
         except:
             pass
         time.sleep(25)  # Less than 50 sec Render timeout

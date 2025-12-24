@@ -1,3 +1,6 @@
+import verified
+verified.attach(bot, conn, admins)
+
 import telebot
 from telebot import types
 import os

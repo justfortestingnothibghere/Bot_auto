@@ -379,8 +379,13 @@ def handle_help(message):
 • <code>/killall</code> - Kill all processes
 • <code>/userinfo &lt;user_id&gt;</code>
 '''
-    bot.reply_to(message, help_text)
-
+        with open('/images/help.gif', 'rb') as gif:
+        bot.send_animation(
+            chat_id=message.chat.id,
+            animation=gif,
+            caption=help_text,
+            parse_mode='HTML'
+        )
 @bot.message_handler(commands=['stats'])
 def handle_stats(message):
     user_id = message.from_user.id

@@ -43,10 +43,6 @@ active_processes = {}
 service_logs = {}  # {service_id: deque of log lines}
 log_streaming = {}  # {service_id: {chat_id, message_id}}
 
-import verified
-verified.attach(bot, conn, admins)
-
-
 # States for multi-step commands
 user_states = {}
 

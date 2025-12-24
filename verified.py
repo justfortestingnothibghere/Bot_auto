@@ -185,7 +185,11 @@ def attach(bot, conn, admins):
         user_id = message.from_user.id
         text = message.text.strip()
 
-        # CAPTCHA ANSWER HANDLING
+     # ALLOW /verify AND /start TO PASS THROUGH
+        if text.startswith(("/verify", "/start")):
+            return
+
+    # CAPTCHA ANSWER HANDLING
         if user_id in captcha_sessions:
             if text == captcha_sessions[user_id]:
                 cur.execute("UPDATE users SET verified=1 WHERE user_id=?", (user_id,))
